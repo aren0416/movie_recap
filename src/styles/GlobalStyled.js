@@ -12,6 +12,7 @@ export const GlobalStyled = createGlobalStyle`
         color: white;
         background-color: #333;
         letter-spacing: -1px;
+        word-break: keep-all;
     }
     a{ text-decoration: none; color: white;}
 `;

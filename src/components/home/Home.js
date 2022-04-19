@@ -2,6 +2,11 @@ import { PageTitle } from "../PateTitle";
 import { movieApi } from "../../api";
 import { useEffect, useState } from "react";
 import { MainBanner } from "./MainBanner";
+import styled from "styled-components";
+
+const Section = styled.section`
+  height: 200vh;
+`;
 
 export const Home = () => {
   const [nowPlaying, setNowPlaying] = useState();
@@ -39,6 +44,7 @@ export const Home = () => {
       {nowPlaying ? (
         <>
           <MainBanner bannerUrl={bannerUrl()} />
+          <Section></Section>
         </>
       ) : (
         "Loading"

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mainStyles } from "../styles/GlobalStyled";
@@ -13,6 +14,9 @@ const SHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: ${mainStyles.padding};
+  background-color: ${(props) => props.bgColor};
+  transition: all 0.2s;
+
   @media screen and (max-width: 500px) {
     padding: 0 20px;
   }
@@ -35,8 +39,21 @@ const Menu = styled.li`
 `;
 
 export const Header = () => {
+  const [bgColor, setBgColor] = useState("transparent");
+
+  const handleScroll = () => {
+    const pagePosY = window.pageYOffset;
+    if (pagePosY > 200) {
+      setBgColor("rgba(0,0,0,0.5)");
+    } else {
+      setBgColor("transparent");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
-    <SHeader>
+    <SHeader bgColor={bgColor}>
       <Logo>
         <Link to="/">LOGO</Link>
       </Logo>

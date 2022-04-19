@@ -5,5 +5,7 @@ export const GlobalStyled = createGlobalStyle`
     ${reset}
     body {
         box-sizing: border-box;
+        letter-spacing: -1px;
     }
+    a{ text-decoration: none}
 `;

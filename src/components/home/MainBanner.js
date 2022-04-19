@@ -5,6 +5,10 @@ const SMainBanner = styled.section`
   height: 80vh;
   padding: 250px 0 0 80px;
   position: relative;
+  @media screen and (max-width: 500px) {
+    padding: 320px 20px 0 20px;
+    height: 100vh;
+  }
 `;
 
 const Title = styled.h3`
@@ -14,6 +18,9 @@ const Title = styled.h3`
   font-weight: 700;
   max-width: 550px;
   width: 100%;
+  @media screen and (max-width: 500px) {
+    font-size: 40px;
+  }
 `;
 
 const Desc = styled.p`
@@ -25,6 +32,9 @@ const Desc = styled.p`
   line-height: 1.8rem;
   opacity: 0.7;
   font-size: 18px;
+  @media screen and (max-width: 500px) {
+    font-size: 16px;
+  }
 `;
 
 const BlackBg = styled.div`

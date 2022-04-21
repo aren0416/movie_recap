@@ -9,6 +9,9 @@ import "swiper/css/navigation";
 
 const MovieCon = styled.div`
   margin-top: 120px;
+  @media screen and (max-width: 500px) {
+    margin-top: 60px;
+  }
 `;
 
 const Title = styled.h3`
@@ -29,7 +32,18 @@ const MovieTitle = styled.h4`
 export const MovieCons = ({ title, movieData }) => {
   const params = {
     spaceBetween: 20,
-    slidesPerView: 5.2,
+    // slidesPerView: 5.2,
+    breakpoints: {
+      320: {
+        slidesPerView: 2.2,
+      },
+      640: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 5.2,
+      },
+    },
   };
 
   return (

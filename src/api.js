@@ -13,4 +13,10 @@ export const movieApi = {
   popular: () => api.get("movie/popular"),
   upComing: () => api.get("movie/upcoming"),
   detail: (movieId) => api.get(`movie/${movieId}`),
+  search: (term) =>
+    api.get("search/movie", {
+      params: {
+        query: term,
+      },
+    }),
 };

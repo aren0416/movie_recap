@@ -14,8 +14,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/detail:id" element={<Detail />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/detail/*" element={<Detail />} />
+        {/* <Route path="/detail/*">
+          <Route path=":id" element={<Detail />} />
+        </Route> */}
+        <Route path="/search/*" element={<Search />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
